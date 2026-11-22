@@ -2,15 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
-}
+body { font-family: 'Inter', sans-serif; }
+.view-section { animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-.view-section {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* Accesibilitate: focus vizibil pentru navigarea cu tastatura */
+:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+.skip-link { position: absolute; left: -999px; top: 8px; z-index: 100; background: #4f46e5; color: #fff; padding: 8px 14px; border-radius: 8px; font-weight: 700; }
+.skip-link:focus { left: 8px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
